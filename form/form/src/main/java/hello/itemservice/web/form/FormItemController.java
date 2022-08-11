@@ -24,7 +24,7 @@ public class FormItemController {
 
     private final ItemRepository itemRepository;
 
-    //이 클래스안에 있는 컨트롤러를 사용하면 모두 model.addAttribute까지 해준다.
+    //이 클래스안에 있는 컨트롤러를 사용하면 어떠한 컨트롤러를 사용하든 model.addAttribute까지 해준다.
     @ModelAttribute("regions")
     public Map<String,String> regions(){
         //LinkedHashMap을 사용하는이류는 HashMap을 사용하면 순서가 뒤죽박죽 될 수 있다.
@@ -33,7 +33,7 @@ public class FormItemController {
         regions.put("Busan", "부산");
         regions.put("JeJu", "제주");
         regions.put("All", "전국");
-        return regions;
+        return regions;  // List가 model을 통해서 넘어간다.
         //이렇게 해주면
         //model.addAttribute("regions",regions); 가 자동으로 들어가는 것이다.
 
@@ -90,6 +90,7 @@ public class FormItemController {
         log.info("item.regions={}", item.getRegions());
         log.info("item.itemType={}", item.getItemType());
         log.info("item.getDeliveryCode={}",item.getDeliveryCode());
+        log.info("item 객체={}",item);
         Item savedItem = itemRepository.save(item);
         redirectAttributes.addAttribute("itemId", savedItem.getId());
         redirectAttributes.addAttribute("status", true);
