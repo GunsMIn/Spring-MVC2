@@ -25,19 +25,18 @@
     <form action="item.html" th:action th:object="${item}" method="post">
 
         <!--검증-->
-        <!--errors?. 은 errors 가 null 일때 NullPointerException 이 발생하는 대신, null 을 반환하는문법이다
-           null에다가 . 찍으면 널포인터 익셉션뜬다-->
-            <div th:if="${errors?.containsKey('globalError')}">
-                <p class="field-error" th:text="${errors['globalError']}">오류 메세지</p>
+        <!--여기서는 글로벌 에러가 하나 밖에 없지만 만약에 여러개 있다면 30번째줄에서 처럼 반복을 돌려줘서 해주면된다-->
+            <div th:if="${#fields.hasGlobalErrors()}">
+                <p class="field-error" th:each="err : ${#fields.globalErrors()}" th:text="${err}">오류 메세지</p>
             </div>
 
-        <!--검증-->
+        <!--검증--><!--th:field 에서 지정한 필드에 오류가 있으면 class 정보를 추가-->
         <div>
             <label for="itemName" th:text="#{label.item.itemName}">상품명</label>
             <input type="text" id="itemName" th:field="*{itemName}"
-                   th:class="${errors?.containsKey('itemName')} ? 'form-control field-error' : 'form-control'"
+                   th:errorclass="field-error"
                    class="form-control" placeholder="이름을 입력하세요">
-            <div class="field-error" th:if="${errors?.containsKey('itemName')}" th:text="${errors['itemName']}">
+            <div class="field-error" th:error="*{itemName}"> <!--에러가 있으면 출력까지해준다.-->
               상품명 오류(랜더링되면 타임리프로대체)
             </div>
         </div>
@@ -70,7 +69,7 @@
             <div class="col">
                 <button class="w-100 btn btn-secondary btn-lg"
                         onclick="location.href='items.html'"
-                        th:onclick="|location.href='@{/validation/v1/items}'|"
+                        th:onclick="|location.href='@{/validation/v2/items}'|"
                         type="button" th:text="#{button.cancel}">취소</button>
             </div>
         </div>
