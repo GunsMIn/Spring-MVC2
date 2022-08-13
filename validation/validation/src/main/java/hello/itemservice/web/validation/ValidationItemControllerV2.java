@@ -10,6 +10,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -25,6 +27,13 @@ public class ValidationItemControllerV2 {
 
     private final ItemRepository itemRepository;
     private final ItemValidator itemValidator;
+
+    //이 클래스안에 있는 어떠한 컨트롤러가 호출될때마다 적용된다.
+    @InitBinder
+    public void init(WebDataBinder webDataBinder){
+        webDataBinder.addValidators(itemValidator);
+    }
+
 
     @GetMapping
     public String items(Model model) {
@@ -213,7 +222,7 @@ public class ValidationItemControllerV2 {
 
 
     //검증로직을 빼준 코드
-    @PostMapping("/add")
+   //@PostMapping("/add")
     public String addItemV5(@ModelAttribute Item item, BindingResult bindingResult,
                             RedirectAttributes redirectAttributes) {
 
@@ -222,6 +231,26 @@ public class ValidationItemControllerV2 {
         }*/
 
         itemValidator.validate(item,bindingResult);
+        //검증에 실패하면 다시 입력 폼으로
+        if(bindingResult.hasErrors()){
+            log.info("errors={}",bindingResult);
+            //bindingResult는 자동으로 view에 같이 넘어간다.
+            return "validation/v2/addForm";
+        }
+
+        //비지니스 로직(errors에 안걸린 성공로직)
+        Item savedItem = itemRepository.save(item);
+        redirectAttributes.addAttribute("itemId", savedItem.getId());
+        redirectAttributes.addAttribute("status", true);
+        return "redirect:/validation/v2/items/{itemId}";
+    }
+
+
+    //이 버전은 31번째줄 먼저 제작
+    @PostMapping("/add")    //@Validated 를 넣어주어야한다.  그래야 Item에대해서 자동으로 검증해준다.
+    public String addItemV6(@Validated @ModelAttribute Item item, BindingResult bindingResult,
+                            RedirectAttributes redirectAttributes) {
+
         //검증에 실패하면 다시 입력 폼으로
         if(bindingResult.hasErrors()){
             log.info("errors={}",bindingResult);

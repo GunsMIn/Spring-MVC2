@@ -9,6 +9,7 @@ import org.springframework.validation.Validator;
 @Component //스프링 빈에 등록하기위해서
 public class ItemValidator implements Validator {
 
+    //validator가 많을 시 구분하는 역할
     @Override
     public boolean supports(Class<?> clazz) {
         return Item.class.isAssignableFrom(clazz);
