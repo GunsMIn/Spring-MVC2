@@ -12,7 +12,11 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="2DAEFTD2qu7ABGCG5L0EHEYxJUS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -37,6 +41,7 @@
       <updated>1660133384957</updated>
       <workItem from="1660133390970" duration="336000" />
       <workItem from="1660133756792" duration="132000" />
+      <workItem from="1660261708374" duration="35000" />
     </task>
     <servers />
   </component>
@@ -44,9 +49,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="3194" y="269" key="FileChooserDialogImpl" timestamp="1660133887482">
-      <screen x="2560" y="0" width="1707" height="1027" />
+    <state x="634" y="269" key="FileChooserDialogImpl" timestamp="1660261740794">
+      <screen x="0" y="0" width="1707" height="1027" />
     </state>
+    <state x="634" y="269" key="FileChooserDialogImpl/0.0.1707.1027/2560.0.1707.1027@0.0.1707.1027" timestamp="1660261740794" />
     <state x="3194" y="269" key="FileChooserDialogImpl/0.0.1707.1027/2560.0.1707.1027@2560.0.1707.1027" timestamp="1660133887482" />
     <state x="2915" y="158" key="SettingsEditor" timestamp="1660133595289">
       <screen x="2560" y="0" width="1707" height="1027" />

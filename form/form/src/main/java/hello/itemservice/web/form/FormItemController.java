@@ -46,13 +46,14 @@ public class FormItemController {
         물론 이렇게 사용하지 않고, 각각의 컨트롤러 메서드에서 모델에 직접 데이터를 담아서 처리해도 된다.*/
     }
 
-    @ModelAttribute("itemTypes")
+    @ModelAttribute("itemTypes")//이렇게해주면 enum타입의 리스트가 model에의하여 view단으로 넘어간다.
     public ItemType[] itemTypes(){
         //ItemType.values() 를 사용하면 해당 ENUM의 모든 정보를 배열로 반환한다
         ItemType[] values = ItemType.values();
         return values;
     }
 
+    //List에 객체자체를 넣어버린 유형
     @ModelAttribute("deliveryCodes")
     public List<DeliveryCode> deliveryCodes(){
         List<DeliveryCode> deliveryCodes = new ArrayList<>();
@@ -94,7 +95,7 @@ public class FormItemController {
         Item savedItem = itemRepository.save(item);
         redirectAttributes.addAttribute("itemId", savedItem.getId());
         redirectAttributes.addAttribute("status", true);
-        return "redirect:/form/items/{itemId}";
+        return "redirect:/form/items/{itemId}"; //새로고침을 방지하기위해서
         //return 의 리다이렉트 값에 값을 적어주면 pathvariable로 들어가게되고 안쓰면 쿼리파라미터로 들어가게된다
     }
 

@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e130b1e-874d-4612-b3d9-249a63073acb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../message/message/src/main/java/hello/itemservice/ItemServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../message/message/src/main/java/hello/itemservice/ItemServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../message/message/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../message/message/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validation/src/main/resources/errors.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validation/src/test/java/hello/itemservice/MessageCodesResolcerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../form/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../form/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../form/form/src/main/java/hello/itemservice/web/form/FormItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../form/form/src/main/java/hello/itemservice/web/form/FormItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation/src/main/java/hello/itemservice/web/validation/ValidationItemControllerV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/validation/src/main/java/hello/itemservice/web/validation/ValidationItemControllerV1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation/src/main/java/hello/itemservice/web/validation/ValidationItemControllerV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/validation/src/main/java/hello/itemservice/web/validation/ValidationItemControllerV2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/validation/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation/src/main/resources/templates/validation/v2/addForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/validation/src/main/resources/templates/validation/v2/addForm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +30,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/validation/build.gradle" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -36,10 +43,18 @@
       <option name="presentableId" value="Default" />
       <updated>1660214133635</updated>
       <workItem from="1660214134780" duration="33000" />
+      <workItem from="1660264190724" duration="39000" />
+      <workItem from="1660362622278" duration="11000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="634" y="269" key="FileChooserDialogImpl" timestamp="1660362630921">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="634" y="269" key="FileChooserDialogImpl/0.0.1707.1027/2560.0.1707.1027@0.0.1707.1027" timestamp="1660362630921" />
   </component>
 </project>
