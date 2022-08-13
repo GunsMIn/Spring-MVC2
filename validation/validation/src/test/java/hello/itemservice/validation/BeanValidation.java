@@ -3,9 +3,7 @@ package hello.itemservice.validation;
 import hello.itemservice.domain.item.Item;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.thymeleaf.engine.AttributeDefinition;
 
-import javax.servlet.http.HttpFilter;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
