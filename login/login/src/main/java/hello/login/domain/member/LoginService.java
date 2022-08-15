@@ -15,6 +15,12 @@ public class LoginService {
      * return이 null일시 로그인 실패
      * */
     public Member login(String loginId, String password) {
+
+        Optional<Member> byLoginId = memberRepository.findByLoginId(loginId);
+        return byLoginId.filter(m -> m.getPassword().equals(password))
+                .orElse(null);
+
+
         /*Optional<Member> byLoginId = memberRepository.findByLoginId(loginId);
         Member member = byLoginId.get();
         if(member.getPassword().equals(password)){
@@ -22,9 +28,8 @@ public class LoginService {
         }
         return null;*/
         //위의 식을 람다로 바꾸면
-        Optional<Member> byLoginId = memberRepository.findByLoginId(loginId);
-        return byLoginId.filter(m -> m.getPassword().equals(password))
-                .orElse(null);
     }
+
+
 
 }

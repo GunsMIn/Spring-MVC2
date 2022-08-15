@@ -34,9 +34,9 @@ public class MemberRepository {
             }
         }
         return Optional.empty();*/
-
         //위의 식을 람다로
-        return findAll().stream().filter(m -> m.getLoginId().equals(loginId))
+        List<Member> memberList = findAll();
+        return memberList.stream().filter(m -> m.getLoginId().equals(loginId))
                 .findFirst();
     }
 
