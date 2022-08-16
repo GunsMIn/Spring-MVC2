@@ -35,6 +35,25 @@ public class HomeController {
         return "loginHome";
     }
 
+
+    //세션을 찾아올때 유용하게 사용가능한 어노테이션
+    @GetMapping("/")
+    public String homeLoginSpring(@SessionAttribute(name=SessionConst.LOGIN_MEMBER,required = false) Member loginMember, Model model) {
+
+        if(loginMember ==null){
+            return "home";
+        }
+        //세션에 값이있으면 로그인된 홈페이지로 이동
+        model.addAttribute("member", loginMember);
+        return "loginHome";
+
+    }
+
+
+
+
+
+
     //세션이용
     //@GetMapping("/")
     public String homeLoginV2(HttpServletRequest request, Model model) {
@@ -72,17 +91,6 @@ public class HomeController {
 
     }
 
-    //세션을 찾아올때 유용하게 사용가능한 어노테이션
-    @GetMapping("/")
-    public String homeLoginSpring(@SessionAttribute(name=SessionConst.LOGIN_MEMBER,required = false) Member loginMember, Model model) {
 
-        if(loginMember ==null){
-            return "home";
-        }
-        //세션에 값이있으면 로그인된 홈페이지로 이동
-        model.addAttribute("member", loginMember);
-        return "loginHome";
-
-    }
 
 }
