@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ec337311-7ea7-446c-9f06-6d58256cf6fb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../form/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../form/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thymleaf-basic/thymleaf-basic/src/main/java/hello/thymleaf/basic/BasicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../thymleaf-basic/thymleaf-basic/src/main/java/hello/thymleaf/basic/BasicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../validation/validation/src/main/java/hello/itemservice/domain/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../validation/validation/src/main/java/hello/itemservice/domain/item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../validation/validation/src/main/java/hello/itemservice/web/validation/ItemValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../validation/validation/src/main/java/hello/itemservice/web/validation/ItemValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../validation/validation/src/main/java/hello/itemservice/web/validation/ValidationItemControllerV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../validation/validation/src/main/java/hello/itemservice/web/validation/ValidationItemControllerV2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../validation/validation/src/main/java/hello/itemservice/web/validation/form/ItemSaveForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../validation/validation/src/main/java/hello/itemservice/web/validation/form/ItemSaveForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../validation/validation/src/main/resources/templates/validation/v4/editForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../validation/validation/src/main/resources/templates/validation/v4/editForm.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2DTPQylE6YtdNbL0xmwcQgPMY32" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/exception/build.gradle" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec337311-7ea7-446c-9f06-6d58256cf6fb" name="Default Changelist" comment="" />
+      <created>1660720088509</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660720088509</updated>
+      <workItem from="1660720089778" duration="35000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="3194" y="269" key="FileChooserDialogImpl" timestamp="1660720122151">
+      <screen x="2560" y="0" width="1707" height="1027" />
+    </state>
+    <state x="3194" y="269" key="FileChooserDialogImpl/0.0.1707.1027/2560.0.1707.1027@2560.0.1707.1027" timestamp="1660720122151" />
+  </component>
+</project>
