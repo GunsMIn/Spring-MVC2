@@ -13,7 +13,7 @@ import java.io.IOException;
 @Slf4j
 public class LoginCheckFilter implements Filter {//javax.servlet.Filter
 
-    //인증 체크가 필요없는 uri들
+    //인증 체크가 필요없는 URI들 // FALSE로 만들어서 doFilter안에 조건식에 못들어가게 할 것 이다.
     private static final String[] whitelist = {"/","/members/add","/login","/logout","/css/*"};
 
     @Override
@@ -34,7 +34,7 @@ public class LoginCheckFilter implements Filter {//javax.servlet.Filter
                     //session이없거나 로그인한 상태가 아니라면 미인증 사용자이다. 그래서 로그인으로 다시보낸다.
                     httpResponse.sendRedirect("/login?redirectURL="+requestURI);
                     //위처럼 해준이유는 만약 로그인 안한 사용자가 들어가고싶어했던 페이지를 로그인 후에 그 페이지로 이동시키기위해서
-                    return ;//여기가 중요, 미인증 사용자는 다음으로 진행하지 않고 끝!
+                    return;//여기가 중요, 미인증 사용자는 다음으로 진행하지 않고 끝!
                 }
             }
                 chain.doFilter(request,response); // 중요! 다음 필터로 넘겨주기위해 이것이 없으면 동작안한다
