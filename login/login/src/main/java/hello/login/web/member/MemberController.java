@@ -25,13 +25,13 @@ public class MemberController {
 
 
     //회원 가입 처리
-    @PostMapping("/add")
+    @PostMapping("/add")        //Member 클래스에서 설정해준 것중에 error가 발생하면 bindingResult에 담긴다.
     public String save(@Validated @ModelAttribute Member member, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
+        if(bindingResult.hasErrors()){ // 에러가 발생하면 다시 회원가입 form으로 이동시켜준다.
             return "members/addMemberForm";
         }
         memberRepository.save(member);
-        return "redirect:/";
+        return "redirect:/"; // 회원가입이 성공하게 된다면 홈화면으로 보내줄 것이다.
     }
 
 

@@ -27,14 +27,15 @@ public class MemberRepository {
 
     //로그인 아이디로 회원조회
     public Optional<Member> findByLoginId(String loginId){
-      /*  List<Member> all = findAll();
-        for (Member member : all) {
-            if(member.getId().equals(loginId)){
+
+        /*List<Member> members = findAll();
+        for (Member member : members) {
+            if(member.getLoginId().equals(loginId)){
                 return Optional.of(member);
             }
         }
         return Optional.empty();*/
-        //위의 식을 람다로
+
         List<Member> memberList = findAll();
         return memberList.stream().filter(m -> m.getLoginId().equals(loginId))
                 .findFirst();

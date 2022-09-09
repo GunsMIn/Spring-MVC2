@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 @Data
 public class LoginForm {
 
-    @NotEmpty
+    @NotEmpty(message = "아이디를 입력하셔야죠?")
     private String loginId;
 
     @NotEmpty

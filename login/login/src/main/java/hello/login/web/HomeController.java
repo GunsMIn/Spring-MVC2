@@ -20,17 +20,21 @@ import javax.servlet.http.HttpSession;
 public class HomeController {
     private final MemberRepository memberRepository;
     private final SessionManager sessionManager;
+
     //홈에 왔을 때
    // @GetMapping("/")                         //로그인 안한 사용자도 들어와야하니까 false여야한다
     public String homeLogin(@CookieValue(name="memberId", required = false) Long memberId, Model model){
                                                                             //스프링이 자동 컨버팅해준다
         if(memberId==null){
-            return "home";
+            return "home"; // 쿠키가 없다면 오리지널 홈화면으로 보내준다
         }
-        Member loginMember = memberRepository.findById(memberId);
+
+        Member loginMember = memberRepository.findById(memberId); // 저장소에서 회원을 꺼내준다.
+
         if(loginMember==null){
-            return "home";
+            return "home";  // 회원을 찾지 못했다해도 오리지널 홈화면으로 보내준다.
         }
+
         model.addAttribute("member", loginMember);
         return "loginHome";
     }

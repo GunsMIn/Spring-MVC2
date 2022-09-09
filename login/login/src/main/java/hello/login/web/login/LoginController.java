@@ -30,15 +30,17 @@ public class LoginController {
     private final LoginService loginService;
     private final SessionManager sessionManager;
 
+
     @GetMapping("/login")
     public String loginForm(@ModelAttribute("loginForm")LoginForm form){
         return "login/loginForm";
     }
 
+    //중요!! 쿠키 적용
     // @PostMapping("/login")
     public String login(@Validated @ModelAttribute LoginForm form, BindingResult result,HttpServletResponse response){
 
-        if(result.hasErrors()){
+        if(result.hasErrors()){ // 문제가 있다면 다시 보내줄 것이다.
             return "login/loginForm";
         }
 
@@ -58,6 +60,18 @@ public class LoginController {
 
         return "redirect:/";
     }
+
+    //쿠키 사용 로그아웃
+   //@PostMapping("/logout")
+    public String logout(HttpServletResponse response){
+        Cookie cookie = new Cookie("memberId", null);
+        //시간을 0으로 만들어줘서 다시 응답에 넣어주자
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        return "redirect:/";
+    }
+
+
 
     // 세션적용
    // @PostMapping("/login")
@@ -162,13 +176,7 @@ public class LoginController {
 
 
 
-    //@PostMapping("/logout")
-    public String logout(HttpServletResponse response){
-        Cookie cookie = new Cookie("memberId", null);
-        cookie.setMaxAge(0);
-        response.addCookie(cookie);
-        return "redirect:/";
-        }
+
 
     //@PostMapping("/logout")
     public String logoutv2(HttpServletRequest request){

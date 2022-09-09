@@ -18,6 +18,7 @@ public class SessionManager {
     //ctrl +alt + c 상수로 만들기
     public static final String SESSION_COOKIE_NAME = "mySessionId";
     //동시성이 존재할 때에는 ConcurrentHashMap을 사용해야한다
+    // String : 세션 아이디 Object : 회원객체
     private Map<String, Object> sessionStore = new ConcurrentHashMap<>();
 
 
@@ -31,7 +32,7 @@ public class SessionManager {
         String sessionId = UUID.randomUUID().toString();
         sessionStore.put(sessionId, value);
 
-        //쿠키 생성
+        //쿠키 생성 // uuid만 쿠키저장소에 넣어준다.
         Cookie mySessionCookie = new Cookie(SESSION_COOKIE_NAME, sessionId);
         response.addCookie(mySessionCookie);
     }

@@ -14,7 +14,7 @@ import java.io.IOException;
 public class LoginCheckFilter implements Filter {//javax.servlet.Filter
 
     //인증 체크가 필요없는 URI들 // FALSE로 만들어서 doFilter안에 조건식에 못들어가게 할 것 이다.
-    private static final String[] whitelist = {"/","/members/add","/login","/logout","/css/*"};
+    private static final String[] whitelist = {"/","/members/add","/login","/logout"};
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
