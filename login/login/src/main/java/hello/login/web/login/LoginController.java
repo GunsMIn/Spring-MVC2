@@ -104,7 +104,7 @@ public class LoginController {
         세션이 없으면 새로운 세션을 생성해서 반환한다.
         request.getSession(false)
         세션이 있으면 기존 세션을 반환한다.
-        세션이 없으면 새로운 세션을 생성하지 않는다. null 을 반환한다*/
+        세션이 없으면 새로운 세션을 생성하지 않는다. null 을 반환한다*/////
     }
 
     @PostMapping("/login")

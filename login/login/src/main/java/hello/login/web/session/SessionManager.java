@@ -34,7 +34,7 @@ public class SessionManager {
 
         //쿠키 생성 // uuid만 쿠키저장소에 넣어준다.
         Cookie mySessionCookie = new Cookie(SESSION_COOKIE_NAME, sessionId);
-        response.addCookie(mySessionCookie);
+        response.addCookie(mySessionCookie);/////
     }
 
     /**
