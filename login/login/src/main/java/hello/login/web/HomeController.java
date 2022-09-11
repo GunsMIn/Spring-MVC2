@@ -42,9 +42,10 @@ public class HomeController {
 
     //세션을 찾아올때 유용하게 사용가능한 어노테이션
     @GetMapping("/")
-    public String homeLoginSpring(@SessionAttribute(name=SessionConst.LOGIN_MEMBER,required = false) Member loginMember, Model model) {
+    public String homeLoginSession(@SessionAttribute(name=SessionConst.LOGIN_MEMBER,required = false) Member loginMember,
+                                   Model model) {
 
-        if(loginMember ==null){
+        if(loginMember==null){
             return "home";
         }
         //세션에 값이있으면 로그인된 홈페이지로 이동
@@ -95,6 +96,24 @@ public class HomeController {
 
     }
 
+
+    //세션 홈 로그인 화면 어노테이션 적용 X
+    //@GetMapping("/")
+    public String homeLoginSpringv2(HttpServletRequest request,Model model){
+
+        HttpSession session = request.getSession(false);
+        if(session==null){
+            return  "/home";
+        }
+
+        Member sessionMember = (Member) session.getAttribute(SessionConst.LOGIN_MEMBER);
+        if(sessionMember==null){
+            return "/home";
+        }
+        model.addAttribute("member", sessionMember);
+        return "/loginHome";
+
+    }
 
 
 }

@@ -23,7 +23,7 @@ public class SessionInfoController {
 
         log.info("sessionId={}",session.getId());
         log.info("maxInactiveInterval={}", session.getMaxInactiveInterval());
-        log.info("creationTime={}", new Date(session.getCreationTime()));
+        log.info("creationTime={}", new Date(session.getCreationTime())); //기본이 long타입이어서
         log.info("lastAccessedTime={}", new
                 Date(session.getLastAccessedTime()));
         log.info("isNew={}", session.isNew());
