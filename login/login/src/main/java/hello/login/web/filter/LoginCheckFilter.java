@@ -14,7 +14,7 @@ import java.io.IOException;
 public class LoginCheckFilter implements Filter {//javax.servlet.Filter
 
     //인증 체크가 필요없는 URI들 // FALSE로 만들어서 doFilter안에 조건식에 못들어가게 할 것 이다.
-    private static final String[] whitelist = {"/","/members/add","/login","/logout"};
+    private static final String[] whitelist = {"/","/members/add","/login","/logout","/css/*"};
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -30,6 +30,7 @@ public class LoginCheckFilter implements Filter {//javax.servlet.Filter
             if(isLoginCheckPath(requestURI)){ // true이면 이 로직을 수행한다.
                 log.info("인증 체크 로직 실행 {}",requestURI);
                 HttpSession session = httpRequest.getSession(false);
+                //미인증 사용자 요청
                 if(session==null || session.getAttribute(SessionConst.LOGIN_MEMBER)==null){
                     //session이없거나 로그인한 상태가 아니라면 미인증 사용자이다. 그래서 로그인으로 다시보낸다.
                     httpResponse.sendRedirect("/login?redirectURL="+requestURI);

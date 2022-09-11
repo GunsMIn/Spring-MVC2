@@ -17,6 +17,7 @@ public class LogFilter implements Filter{//javax.servlet.FILTER
         log.info("로그 필터 초기화");
     }
 
+    //고객의 요청이 올 때 마다 해당 메서드가 호출된다
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 

@@ -131,6 +131,7 @@ public class LoginController {
         //세션에 로그인 회원정보 보관 (로그인된 member객체를 세션에 키:값으로 담아준다)
         session.setAttribute(SessionConst.LOGIN_MEMBER,loginMember);
 
+        //로그인 후에 전에 요청했던 url로 보내주기위해서!
         return "redirect:"+redirectURL;
 
     }
