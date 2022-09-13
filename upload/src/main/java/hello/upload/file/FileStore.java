@@ -34,6 +34,7 @@ public class FileStore {
 
         String originalFilename = multipartFile.getOriginalFilename(); // 실제 파일명
         String storeFileName = createStoreFileName(originalFilename); // 서버 관리 파일명
+        //서버에 저장
         multipartFile.transferTo(new File(getFullPath(storeFileName)));
         //createStoreFileName() : 서버 내부에서 관리하는 파일명은 유일한 이름을 생성하는 UUID 를 사용해서
         //충돌하지 않도록 한다.
